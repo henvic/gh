@@ -797,6 +797,104 @@ Option                | Usage        | Type
 gh re --delete foo
     ```
 
+### 6. Create Label
+
+Option                | Usage        | Type
+---                   | ---          | ---
+`-C`, `--color`       | **Required** | `String`
+`-L`, `--label`       | **Required** | `Boolean`
+`-N`, `--new`         | **Required** | `String`
+`-r`, `--repo`        | **Required** | `String`
+`-O`, `--organization`| *Optional*   | `String`
+`-u`, `--user`        | *Optional*   | `String`
+
+#### Examples
+
+* Create a label for a repository.
+
+    ```
+gh re --label --new bug --color color --repo repo
+    ```
+
+* Create a label for an organizations repository.
+
+    ```
+gh re --label --new bug --color color --organization organization --repo repo
+    ```
+
+### 7. Delete Label
+
+Option                | Usage        | Type
+---                   | ---          | ---
+`-L`, `--label`       | **Required** | `Boolean`
+`-D`, `--delete`      | **Required** | `String`
+`-r`, `--repo`        | **Required** | `String`
+`-O`, `--organization`| *Optional*   | `String`
+`-u`, `--user`        | *Optional*   | `String`
+
+#### Examples
+
+* Delete a label from a repository.
+
+    ```
+gh re --label --delete bug --repo repo
+    ```
+
+* Delete a label from an organizations repository.
+
+    ```
+gh re --label --delete bug --organization organization --repo repo
+    ```
+
+### 8. List Labels
+
+Option                | Usage        | Type
+---                   | ---          | ---
+`-L`, `--label`       | **Required** | `Boolean`
+`-l`, `--list`        | **Required** | `Boolean`
+`-r`, `--repo`        | **Required** | `String`
+`-O`, `--organization`| *Optional*   | `String`
+`-u`, `--user`        | *Optional*   | `String`
+
+#### Examples
+
+* List labels for a repository.
+
+    ```
+gh re --label --list --repo repo
+    ```
+
+* List labels for an organizations repository.
+
+    ```
+gh re --label --list --organization organization --repo repo
+    ```
+
+### 9. Update Label
+
+Option                | Usage        | Type
+---                   | ---          | ---
+`-C`, `--color`       | **Required** | `String`
+`-L`, `--label`       | **Required** | `Boolean`
+`-r`, `--repo`        | **Required** | `String`
+`-U`, `--update`      | **Required** | `String`
+`-O`, `--organization`| *Optional*   | `String`
+`-u`, `--user`        | *Optional*   | `String`
+
+#### Examples
+
+* Update a label for a repository.
+
+    ```
+gh re --label --update bug --color color --repo repo
+    ```
+
+* Update a label for an organizations repository.
+
+    ```
+gh re --label --update bug --color color --organization organization --repo repo
+    ```
+
 ## Gists
 
 ```
