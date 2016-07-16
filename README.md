@@ -122,13 +122,13 @@ gh pr
 gh pr --info number
     ```
 
-* List open pulls requests for all branches from all your repositories.
+* List open pull requests for all branches from all your repositories.
 
     ```
 gh pr --list --all
     ```
 
-* List open pull requests sent by logged user on current repository.
+* List open pull requests for all branches in all repositories belonging to the "github" organization.
 
     ```
 gh pr --list --all --org github
@@ -620,6 +620,48 @@ gh is 100
 gh is 100 --browser
     ```
 
+### 6. Search
+
+Option             | Usage        | Type
+---                | ---          | ---
+`-s`, `--search`   | **Required** | `Boolean`
+`-a`, `--all`      | *Optional*   | `Boolean`
+`-d`, `--detailed` | *Optional*   | `Boolean`
+`-r`, `--repo`     | *Optional*   | `String`
+`-u`, `--user`     | *Optional*   | `String`
+
+#### Examples
+
+* Search issues in current repository
+
+    ```
+gh is --search 'term'
+    ```
+
+* Search issues in all repositories for a user
+
+    ```
+gh is --all --user node-gh --search 'term'
+    ```
+
+* Search issues in a repository for a user
+
+    ```
+gh is  --user node-gh --repo gh --search 'term'
+    ```
+
+* Search issues in a repository for a user with link and content
+
+    ```
+gh is  --user node-gh --repo gh --search 'term'
+    ```
+
+* Search issues with github filters
+
+    ```
+gh is  --user node-gh --repo gh --search 'updated:<=2013-05-24'
+    ```
+
 ## Repo
 ```
 gh repo
@@ -753,6 +795,104 @@ Option                | Usage        | Type
 
     ```
 gh re --delete foo
+    ```
+
+### 6. Create Label
+
+Option                | Usage        | Type
+---                   | ---          | ---
+`-C`, `--color`       | **Required** | `String`
+`-L`, `--label`       | **Required** | `Boolean`
+`-N`, `--new`         | **Required** | `String`
+`-r`, `--repo`        | **Required** | `String`
+`-O`, `--organization`| *Optional*   | `String`
+`-u`, `--user`        | *Optional*   | `String`
+
+#### Examples
+
+* Create a label for a repository.
+
+    ```
+gh re --label --new bug --color color --repo repo
+    ```
+
+* Create a label for an organizations repository.
+
+    ```
+gh re --label --new bug --color color --organization organization --repo repo
+    ```
+
+### 7. Delete Label
+
+Option                | Usage        | Type
+---                   | ---          | ---
+`-L`, `--label`       | **Required** | `Boolean`
+`-D`, `--delete`      | **Required** | `String`
+`-r`, `--repo`        | **Required** | `String`
+`-O`, `--organization`| *Optional*   | `String`
+`-u`, `--user`        | *Optional*   | `String`
+
+#### Examples
+
+* Delete a label from a repository.
+
+    ```
+gh re --label --delete bug --repo repo
+    ```
+
+* Delete a label from an organizations repository.
+
+    ```
+gh re --label --delete bug --organization organization --repo repo
+    ```
+
+### 8. List Labels
+
+Option                | Usage        | Type
+---                   | ---          | ---
+`-L`, `--label`       | **Required** | `Boolean`
+`-l`, `--list`        | **Required** | `Boolean`
+`-r`, `--repo`        | **Required** | `String`
+`-O`, `--organization`| *Optional*   | `String`
+`-u`, `--user`        | *Optional*   | `String`
+
+#### Examples
+
+* List labels for a repository.
+
+    ```
+gh re --label --list --repo repo
+    ```
+
+* List labels for an organizations repository.
+
+    ```
+gh re --label --list --organization organization --repo repo
+    ```
+
+### 9. Update Label
+
+Option                | Usage        | Type
+---                   | ---          | ---
+`-C`, `--color`       | **Required** | `String`
+`-L`, `--label`       | **Required** | `Boolean`
+`-r`, `--repo`        | **Required** | `String`
+`-U`, `--update`      | **Required** | `String`
+`-O`, `--organization`| *Optional*   | `String`
+`-u`, `--user`        | *Optional*   | `String`
+
+#### Examples
+
+* Update a label for a repository.
+
+    ```
+gh re --label --update bug --color color --repo repo
+    ```
+
+* Update a label for an organizations repository.
+
+    ```
+gh re --label --update bug --color color --organization organization --repo repo
     ```
 
 ## Gists
